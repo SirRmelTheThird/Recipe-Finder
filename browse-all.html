@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse All Recipes – Food Recipe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/browse.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="browse-page">
+
+  <!-- Navbar -->
+  <header class="header-container">
+    <nav class="navbar-container">
+      <div class="navbar browse-navbar">
+        <a href="index.html" class="navbar-logo">Logo</a>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="browse-all.html" class="navbar-link">Browse All</a></li>
+          <li><a href="meal-planner.html" class="navbar-link">Meal Planner</a></li>
+          <li class="navbar-item"><a href="cookbook.html" class="navbar-link">Cookbook</a></li>
+          <li class="navbar-item"><a href="healthinfo.html" class="navbar-link">Health <br>Information</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link navbar-link--bordered">Create your own recipe</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="browse-hero">
+    <div class="browse-hero-inner">
+      <p class="browse-eyebrow">🍽️ Full Recipe Library</p>
+      <h1 class="browse-hero-title">Browse All Recipes</h1>
+      <p class="browse-hero-sub">Explore hundreds of recipes from around the world — filter by category, cuisine or search by name.</p>
+
+      <div class="browse-search-wrap">
+        <span>🔍</span>
+        <input type="text" id="browse-search" placeholder="Search recipes, ingredients, cuisines…">
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter bar -->
+  <div class="browse-filterbar">
+    <div class="browse-filterbar-inner">
+      <div class="browse-filter-group">
+        <label>Category</label>
+        <select id="filter-category" class="browse-select">
+          <option value="all">All categories</option>
+        </select>
+      </div>
+      <div class="browse-filter-group">
+        <label>Cuisine</label>
+        <select id="filter-area" class="browse-select">
+          <option value="all">All cuisines</option>
+        </select>
+      </div>
+      <div class="browse-filter-group">
+        <label>Sort by</label>
+        <select id="filter-sort" class="browse-select">
+          <option value="az">A – Z</option>
+          <option value="za">Z – A</option>
+          <option value="area">By Cuisine</option>
+          <option value="category">By Category</option>
+        </select>
+      </div>
+      <div class="browse-count">
+        Showing <span id="browse-count">0</span> recipes
+      </div>
+    </div>
+  </div>
+
+  <!-- Category pill nav -->
+  <div class="browse-pills-wrap">
+    <div class="browse-pills" id="browse-pills">
+      <button class="browse-pill active" data-cat="all">All</button>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div class="browse-loading" id="browse-loading">
+    <div class="browse-spinner"></div>
+    <p>Loading recipes…</p>
+  </div>
+
+  <!-- Grid -->
+  <main class="browse-main">
+    <div class="browse-grid" id="browse-grid"></div>
+    <div class="browse-no-results" id="browse-no-results" style="display:none">
+      <p>😕 No recipes match. Try a different search or filter.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Logo</a>
+        <p class="footer-tagline">Making food simple, tasty, and enjoyable for everyone.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📘</a>
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">🐦</a>
+          <a href="#" class="footer-social">▶️</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="browse-all.html">Browse All Recipes</a>
+          <a href="#">Protein Foods</a>
+          <a href="cookbooks.html">Cook Book Guides</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="health.html">Health Information</a>
+          <a href="#">Create Your Own Recipe</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fola Food Recipe. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="browse-back-top" id="browse-back-top">↑</button>
+
+  <script src="js/browse.js"></script>
+</body>
+</html>

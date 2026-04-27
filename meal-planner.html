@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/planner.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="planner-page">
+
+  <header class="header-container">
+    <nav class="navbar-container">
+      <div class="navbar planner-navbar">
+        <a href="index.html" class="navbar-logo">Logo</a>
+        <ul class="navbar-list">
+          <li><a href="browse-all.html" class="navbar-link">Browse All</a></li>
+          <li><a href="meal-planner.html" class="navbar-link">Meal Planner</a></li>
+          <li class="navbar-item"><a href="cookbook.html" class="navbar-link">Cookbook</a></li>
+          <li><a href="health.html" class="navbar-link">Health Info</a></li>
+          <li><a href="#" class="navbar-link navbar-link--bordered">Create recipe</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Top section -->
+  <div class="planner-top">
+    <h1>📅 My Meal Planner</h1>
+    <p>Plan what you're eating this week. Saves automatically.</p>
+    <div class="planner-top-btns">
+      <button id="clear-btn">🗑 Clear all</button>
+      <button onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+
+  <div class="planner-wrap">
+
+    <!-- Week grid -->
+    <div class="week-grid" id="week-grid"></div>
+
+    <!-- Shopping list -->
+    <div class="shopping-box">
+      <div class="shopping-box-top">
+        <h2>🛒 Shopping List</h2>
+        <button id="gen-btn">Generate from plan</button>
+      </div>
+      <div id="shopping-list">
+        <p class="empty-msg">Add some meals first, then generate your list.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal-box">
+      <div class="modal-top">
+        <h3 id="modal-label">Pick a meal</h3>
+        <button id="modal-close">✕</button>
+      </div>
+      <input type="text" id="modal-search" placeholder="🔍 Search recipes…">
+      <div id="modal-results"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Logo</a>
+        <p class="footer-tagline">Making food simple, tasty, and enjoyable for everyone.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="browse-all.html">Browse All</a>
+          <a href="meal-planner.html">Meal Planner</a>
+          <a href="cookbooks.html">Cookbooks</a>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <a href="health.html">Health Info</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Food Recipe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/planner.js"></script>
+</body>
+</html>

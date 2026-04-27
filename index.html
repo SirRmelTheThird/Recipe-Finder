@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Recipe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="img-bg">
+  <img class="bg-slide active" src="assets/images/veg-food.jpg" alt="">
+  <img class="bg-slide" src="assets/images/food-salad2.jpg" alt="">
+  <img class="bg-slide" src="assets/images/carrots-img.jpg" alt="">
+</div>
+
+  <header class="header-container">
+    <nav class="navbar-container">
+      <div class="navbar">
+        <a href="index.html" class="navbar-logo">Logo</a>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="browse-all.html" class="navbar-link">Browse All</a></li>
+          <li><a href="meal-planner.html" class="navbar-link">Meal Planner</a></li>
+          <li class="navbar-item"><a href="cookbook.html" class="navbar-link">Cookbook</a></li>
+          <li class="navbar-item"><a href="healthinfo.html" class="navbar-link">Health <br>Information</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link navbar-link--bordered">Create your own recipe</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-right">
+      <div class="intro-text">
+        <h1>Make tasty and enjoyable food, with our recipe finder</h1>
+      </div>
+      <div class="search-container">
+        <div class="search-bar">
+          <a href="browse-all.html">
+          <button class="view-more-btn">View more</button>
+          </a>
+          <input type="text" class="search-input" placeholder="search for your fav foods">
+        </div>
+        <div class="more-filters">
+          More filters <span class="arrow">&#8964;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Access Section -->
+  <section class="quick-access-section">
+    <div class="section-header">
+      <h2 class="section-title">Quick access</h2>
+      <p class="section-sub">Browse by category</p>
+    </div>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow left" onclick="scrollCarousel('quick-carousel', -1)">&#8249;</button>
+      <div class="carousel" id="quick-carousel">
+        <div class="category-card">
+          <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+            <span class="card-icon">🥗</span>
+          </div>
+          <p>Healthy foods</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#00897b; --bg:#e0f2f1;">
+            <span class="card-icon">🥤</span>
+          </div>
+          <p>Smoothie Shakes</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#aacc00; --bg:#f9fbe7;">
+            <span class="card-icon">🍳</span>
+          </div>
+          <p>Healthy breakfast</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#4b0082; --bg:#f3e5f5;">
+            <span class="card-icon">🌾</span>
+          </div>
+          <p>Whole Grains</p>
+        </div>
+          <div class="category-card">
+          <div class="card-box" style="--accent:#4b0082; --bg:#f3e5f5;">
+            <span class="card-icon">🌾</span>
+          </div>
+          <p>Whole Grains</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#e91e8c; --bg:#fce4ec;">
+            <span class="card-icon">🥚</span>
+          </div>
+          <p>With Eggs</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#e65100; --bg:#fff3e0;">
+            <span class="card-icon">🍲</span>
+          </div>
+          <p>Type 1</p>
+        </div>
+        <div class="category-card">
+          <div class="card-box" style="--accent:#1a3fcc; --bg:#e8eaf6;">
+            <span class="card-icon">🥘</span>
+          </div>
+          <p>Type 2</p>
+        </div>
+      </div>
+      <button class="carousel-arrow right" onclick="scrollCarousel('quick-carousel', 2)">&#8250;</button>
+    </div>
+    <div class="section-footer">
+      <a href="#" class="view-all-link">View all →</a>
+    </div>
+  </section>
+
+  <!-- Healthy Country Foods Section -->
+  <section class="country-section">
+    <div class="section-header">
+      <h2 class="section-title">Healthy country foods</h2>
+      <p class="section-sub">Explore cuisines from around the world</p>
+    </div>
+    <div class="country-grid">
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🫖</span>
+        </div>
+        <p>British diets</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🫐</span>
+        </div>
+        <p>Swedish delights</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🥢</span>
+        </div>
+        <p>Chinese Savours</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🌿</span>
+        </div>
+        <p>Jamaican grains</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🥑</span>
+        </div>
+        <p>American clean</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🫒</span>
+        </div>
+        <p>Type 1</p>
+      </div>
+      <div class="category-card">
+        <div class="card-box" style="--accent:#2d7a2d; --bg:#e8f5e9;">
+          <span class="card-icon">🌶️</span>
+        </div>
+        <p>Type 2</p>
+      </div>
+    </div>
+    <div class="section-footer">
+      <a href="#" class="view-all-link">View all →</a>
+    </div>
+  </section>
+
+
+  <!-- Cook Book Guides Section -->
+<section class="cookbook-section">
+  <div class="section-header">
+    <h2 class="section-title">Cook Book Guides</h2>
+    <p class="section-sub">Handpicked guides to elevate your cooking</p>
+  </div>
+  <div class="cookbook-grid">
+
+    <div class="cookbook-card">
+      <div class="cookbook-img-wrap">
+        <img src="assets/images/book1.jpg" alt="Book 1">
+      </div>
+      <h3 class="cookbook-title">Title Book Guide</h3>
+      <p class="cookbook-desc">Little description:</p>
+    </div>
+
+    <div class="cookbook-card">
+      <div class="cookbook-img-wrap">
+        <img src="assets/images/book2.jpg" alt="Book 2">
+      </div>
+      <h3 class="cookbook-title">Title Book Guide</h3>
+      <p class="cookbook-desc">Little description:</p>
+    </div>
+
+    
+
+    <div class="cookbook-card">
+      <div class="cookbook-img-wrap">
+        <img src="assets/images/book3.jpg" alt="Book 3">
+      </div>
+      <h3 class="cookbook-title">Title Book Guide</h3>
+      <p class="cookbook-desc">Little description:</p>
+    </div>
+
+    <div class="cookbook-card">
+      <div class="cookbook-img-wrap">
+        <img src="assets/images/book4.jpg" alt="Book 4">
+      </div>
+      <h3 class="cookbook-title">Title Book Guide</h3>
+      <p class="cookbook-desc">Little description:</p>
+    </div>
+
+  </div>
+  <div class="section-footer">
+    <a href="cookbook.html" class="view-all-link">View all →</a>
+  </div>
+</section>
+
+<!-- Recipe Cards Section -->
+<section class="recipes-section">
+  <div class="section-header">
+    <h2 class="section-title">🍽️ Popular Recipes</h2>
+    <p class="section-sub">Discover what everyone's cooking right now</p>
+  </div>
+
+  <!-- Recipe filter tabs -->
+  <div class="recipe-tabs">
+    <button class="recipe-tab active" data-tab="all">All</button>
+    <button class="recipe-tab" data-tab="main">Main Meal</button>
+    <button class="recipe-tab" data-tab="side">Side Dish</button>
+    <button class="recipe-tab" data-tab="snack">Snack</button>
+    <button class="recipe-tab" data-tab="starter">Starter</button>
+  </div>
+
+  <div class="recipe-grid" id="recipe-grid">
+
+    <div class="recipe-card active-card" data-type="main">
+      <div class="recipe-card-img">
+        <img src="assets/images/food-salad2.jpg" alt="Linguine with leeks">
+        <span class="recipe-time-badge">30 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Linguine with leeks and mushrooms</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Main meal</li>
+          <li><span class="recipe-meta-icon">👥</span> 3 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 30 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="side">
+      <div class="recipe-card-img">
+        <img src="assets/images/veg-food.jpg" alt="Garlic prawns">
+        <span class="recipe-time-badge">13 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Garlic and lemon prawns with courgettes</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Side dish, Snack, Starter</li>
+          <li><span class="recipe-meta-icon">👥</span> 4 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 13 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="side">
+      <div class="recipe-card-img">
+        <img src="assets/images/carrots-img.jpg" alt="Roasted red peppers">
+        <span class="recipe-time-badge">45 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Roasted red peppers with mozzarella and anchovies</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Side dish, Snack, Starter</li>
+          <li><span class="recipe-meta-icon">👥</span> 6 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 45 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="snack">
+      <div class="recipe-card-img">
+        <img src="assets/images/veg-food.jpg" alt="Patatas bravas">
+        <span class="recipe-time-badge">1 hr</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Patatas bravas</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Side dish, Snack, Starter</li>
+          <li><span class="recipe-meta-icon">👥</span> 4 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 1 hour</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="main">
+      <div class="recipe-card-img">
+        <img src="assets/images/food-salad2.jpg" alt="Chicken stir fry">
+        <span class="recipe-time-badge">20 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Chicken and vegetable stir fry</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Main meal</li>
+          <li><span class="recipe-meta-icon">👥</span> 2 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 20 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="starter">
+      <div class="recipe-card-img">
+        <img src="assets/images/carrots-img.jpg" alt="Tomato soup">
+        <span class="recipe-time-badge">25 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Creamy roasted tomato soup</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Starter, Main meal</li>
+          <li><span class="recipe-meta-icon">👥</span> 4 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 25 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="snack">
+      <div class="recipe-card-img">
+        <img src="assets/images/veg-food.jpg" alt="Avocado toast">
+        <span class="recipe-time-badge">10 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Smashed avocado toast with poached egg</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Snack, Breakfast</li>
+          <li><span class="recipe-meta-icon">👥</span> 1 serving</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 10 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card" data-type="main">
+      <div class="recipe-card-img">
+        <img src="assets/images/food-salad2.jpg" alt="Salmon">
+        <span class="recipe-time-badge">35 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Pan-seared salmon with lemon butter</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Main meal</li>
+          <li><span class="recipe-meta-icon">👥</span> 2 servings</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 35 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+        <div class="recipe-card" data-type="snack">
+      <div class="recipe-card-img">
+        <img src="assets/images/veg-food.jpg" alt="Avocado toast">
+        <span class="recipe-time-badge">10 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Smashed avocado toast with poached egg</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Snack, Breakfast</li>
+          <li><span class="recipe-meta-icon">👥</span> 1 serving</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 10 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+        <div class="recipe-card" data-type="snack">
+      <div class="recipe-card-img">
+        <img src="assets/images/veg-food.jpg" alt="Avocado toast">
+        <span class="recipe-time-badge">10 min</span>
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">Smashed avocado toast with poached egg</h3>
+        <ul class="recipe-meta">
+          <li><span class="recipe-meta-icon">🍴</span> Snack, Breakfast</li>
+          <li><span class="recipe-meta-icon">👥</span> 1 serving</li>
+          <li><span class="recipe-meta-icon">⏱️</span> 10 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-footer">
+    <a href="#" class="view-all-link">View all recipes →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Logo</a>
+      <p class="footer-tagline">Making food simple, tasty, and enjoyable for everyone.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social">📘</a>
+        <a href="#" class="footer-social">📸</a>
+        <a href="#" class="footer-social">🐦</a>
+        <a href="#" class="footer-social">▶️</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">Browse All Recipes</a>
+        <a href="#">Protein Foods</a>
+        <a href="#">Healthy Eating</a>
+        <a href="#">Quick Meals</a>
+        <a href="cookbooks.html">Cook Book Guides</a>
+      </div>
+      <div class="footer-col">
+        <h4>Cuisines</h4>
+        <a href="#">British Diets</a>
+        <a href="#">Chinese Savours</a>
+        <a href="#">Jamaican Grains</a>
+        <a href="#">Swedish Delights</a>
+        <a href="#">American Clean</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Health Information</a>
+        <a href="#">Create Your Own Recipe</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Fola Food Recipe. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="js/script.js"></script>
+    <script src="js/bg-slide.js"></script>
+    
+  
+</body>
+</html>
