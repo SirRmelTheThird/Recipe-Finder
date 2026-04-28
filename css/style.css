@@ -1,0 +1,833 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  background-color: #FDFBD4;
+  color: #FDFBD4;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+.img-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.img-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;   /* 2s fade between images */
+}
+
+.bg-slide.active {
+  opacity: 1;
+}
+
+/* ── Navbar ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8rem;
+  padding: 0.8rem 2rem;
+  position: relative;
+  top: 30px;
+  width: 95%;
+  margin: 0 auto;
+  z-index: 1000;
+}
+.navbar-container {
+  align-items: center;
+  justify-content: flex-start;
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0edd0e;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+.navbar-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+.navbar-link:hover {
+  color: #e30c0c;
+}
+
+/* bordered CTA link */
+.navbar-link--bordered {
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50px;
+  padding: 0.45rem 1.1rem;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+.navbar-link--bordered:hover {
+  background: #fff;
+  color: #1a1a1a;
+  border-color: #fff;
+}
+
+/* ── Hero ── */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.hero-right {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  z-index: 9;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+.intro-text {
+  color: #fff;
+  text-align: left;
+  width: 100%;
+}
+.intro-text h1 {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ── Search ── */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  width: 100%;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+.view-more-btn {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+.view-more-btn:hover {
+  background: #f0f0f0;
+}
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.2rem;
+  width: 100%;
+}
+.search-input::placeholder {
+  color: rgba(238, 236, 236, 0.75);
+}
+.more-filters {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-end;
+}
+.more-filters:hover {
+  opacity: 0.7;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  padding-bottom: 13px;
+}
+
+/* ── Sections shared ── */
+.quick-access-section,
+.country-section {
+  background-color: #FDFBD4;
+  padding: 4rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+.quick-access-section {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.section-header {
+  margin-bottom: 2.5rem;
+}
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.5px;
+}
+.section-sub {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── Carousel ── */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.carousel {
+  display: flex;
+  gap: 1.8rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 900px;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel-arrow {
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #333;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.carousel-arrow:hover {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+/* ── Category card ── */
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.category-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  max-width: 110px;
+  line-height: 1.3;
+}
+.card-box {
+  width: 110px;
+  height: 110px;
+  border-radius: 22px;
+  border: 2.5px solid var(--accent);
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.card-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+.card-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+/* ── Country grid ── */
+.country-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;        
+}
+
+/* ── View all link ── */
+.section-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+.view-all-link {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2d7a2d;
+  text-decoration: none;
+  border-bottom: 2px solid #2d7a2d;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+.view-all-link:hover {
+  opacity: 0.6;
+}
+
+
+
+
+/* ── Cook Book Guides ── */
+.cookbook-section {
+  background-color: #FDFBD4;
+  padding: 4rem 5rem;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.cookbook-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cookbook-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  width: 160px;
+}
+
+.cookbook-img-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #2d7a2d;
+  overflow: hidden;
+  background-color: #e8f5e9;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.cookbook-img-wrap:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.13);
+}
+
+.cookbook-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cookbook-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cookbook-desc {
+  font-size: 0.82rem;
+  color: #555;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ── Recipe Section ── */
+.recipes-section {
+  background-color: #f7f6e8;
+  padding: 4rem 5rem;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Tabs */
+.recipe-tabs {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.recipe-tab {
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 50px;
+  padding: 0.45rem 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.recipe-tab:hover,
+.recipe-tab.active {
+  background: #2d7a2d;
+  border-color: #2d7a2d;
+  color: #fff;
+}
+
+/* Grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.recipe-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.11);
+}
+.recipe-card-img {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: #e8f5e9;
+}
+.recipe-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.recipe-card:hover .recipe-card-img img {
+  transform: scale(1.06);
+}
+.recipe-time-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+.recipe-card-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.recipe-card-title {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.recipe-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.recipe-meta li {
+  font-size: 0.82rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.recipe-meta-icon {
+  font-size: 0.9rem;
+  color: #c0392b;
+  flex-shrink: 0;
+}
+
+
+/* ── Footer ── */
+.footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 4rem 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 220px;
+}
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0edd0e;
+  text-decoration: none;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+.footer-socials {
+  display: flex;
+  gap: 0.7rem;
+}
+.footer-social {
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+.footer-social:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+/* Link columns */
+.footer-links {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 130px;
+}
+.footer-col h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.3rem;
+}
+.footer-col a {
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 400;
+}
+.footer-col a:hover {
+  color: #0edd0e;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0;
+}
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-bottom-links a {
+  font-size: 0.8rem;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-bottom-links a:hover {
+  color: #0edd0e;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 0;
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .footer-brand {
+    max-width: 100%;
+  }
+  .footer-links {
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .recipes-section {
+    padding: 2.5rem 1.5rem;
+  }
+  .recipe-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .recipe-card-img {
+    height: 140px;
+  }
+  .recipe-card-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .cookbook-section {
+    padding: 2.5rem 1.5rem;
+  }
+  .cookbook-grid {
+    gap: 2rem;
+    max-width: 100%;
+  }
+  .cookbook-card {
+    width: 120px;
+  }
+  .cookbook-img-wrap {
+    width: 110px;
+    height: 110px;
+  }
+  .cookbook-title {
+    font-size: 0.82rem;
+  }
+  .cookbook-desc {
+    font-size: 0.76rem;
+  }
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .navbar {
+    gap: 2rem;
+    width: 95%;
+  }
+  .navbar-list {
+    gap: 1.5rem;
+  }
+  .hero-right {
+    width: 45%;
+  }
+  .quick-access-section,
+  .country-section {
+    padding: 3rem 3rem;
+  }
+  .carousel {
+    max-width: 700px;
+  }
+  .country-grid {
+    max-width: 700px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    top: 15px;
+    width: 95%;
+    padding: 0.8rem 1rem;
+  }
+  .navbar-list {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .navbar-link {
+    font-size: 0.85rem;
+  }
+  .navbar-link--bordered {
+    padding: 0.35rem 0.9rem;
+  }
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+  .hero-right {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 90%;
+    margin: 120px auto 2rem auto;
+  }
+  .search-bar {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  .view-more-btn {
+    width: 100%;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+  .more-filters {
+    align-self: flex-start;
+  }
+  .quick-access-section,
+  .country-section {
+    padding: 2.5rem 1.5rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .card-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+  }
+  .card-icon {
+    font-size: 1.6rem;
+  }
+  .category-card p {
+    font-size: 0.78rem;
+    max-width: 80px;
+  }
+  .country-grid {
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  .carousel {
+    max-width: 100%;
+  }
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+}
+
+/* ── Small phones ── */
+@media (max-width: 480px) {
+  .navbar-list {
+    gap: 0.8rem;
+  }
+  .navbar-link {
+    font-size: 0.78rem;
+  }
+  .intro-text h1 {
+    font-size: 1.1rem;
+  }
+}

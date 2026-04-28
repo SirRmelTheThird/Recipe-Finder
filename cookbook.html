@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cook Book Guides – Food Recipe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cookbooks.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="cookbooks-page">
+
+  <!-- Navbar -->
+  <header class="header-container">
+    <nav class="navbar-container">
+      <div class="navbar">
+        <a href="index.html" class="navbar-logo">Logo</a>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="browse-all.html" class="navbar-link">Browse All</a></li>
+          <li><a href="meal-planner.html" class="navbar-link">Meal Planner</a></li>
+          <li class="navbar-item"><a href="cookbook.html" class="navbar-link">Cookbook</a></li>
+          <li class="navbar-item"><a href="healthinfo.html" class="navbar-link">Health <br>Information</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link navbar-link--bordered">Create your own recipe</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="cb-hero">
+    <div class="cb-hero-inner">
+      <p class="cb-hero-eyebrow">📚 Library</p>
+      <h1 class="cb-hero-title">Cook Book Guides</h1>
+      <p class="cb-hero-sub">Hundreds of handpicked guides — from quick weeknight meals to deep-dive healthy eating programmes.</p>
+
+      <!-- Search -->
+      <div class="cb-search-wrap">
+        <span class="cb-search-icon">🔍</span>
+        <input type="text" id="cb-search" class="cb-search-input" placeholder="Search cook books, topics, authors…">
+        <button class="cb-search-btn">Search</button>
+      </div>
+
+      <!-- Quick filter pills -->
+      <div class="cb-pills">
+        <button class="cb-pill active" data-filter="all">All</button>
+        <button class="cb-pill" data-filter="healthy">Healthy Eating</button>
+        <button class="cb-pill" data-filter="quick">Under 10 Minutes</button>
+        <button class="cb-pill" data-filter="protein">High Protein</button>
+        <button class="cb-pill" data-filter="vegan">Vegan</button>
+        <button class="cb-pill" data-filter="budget">Budget Meals</button>
+        <button class="cb-pill" data-filter="baking">Baking</button>
+        <button class="cb-pill" data-filter="world">World Cuisine</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter bar -->
+  <div class="cb-filterbar">
+    <div class="cb-filterbar-inner">
+      <div class="cb-filter-group">
+        <label>Sort by</label>
+        <select id="cb-sort" class="cb-select">
+          <option value="popular">Most Popular</option>
+          <option value="rating">Highest Rated</option>
+          <option value="newest">Newest</option>
+          <option value="az">A – Z</option>
+        </select>
+      </div>
+      <div class="cb-filter-group">
+        <label>Rating</label>
+        <select id="cb-rating-filter" class="cb-select">
+          <option value="all">Any rating</option>
+          <option value="5">⭐⭐⭐⭐⭐ only</option>
+          <option value="4">⭐⭐⭐⭐ & up</option>
+          <option value="3">⭐⭐⭐ & up</option>
+        </select>
+      </div>
+      <div class="cb-filter-group">
+        <label>Level</label>
+        <select id="cb-level" class="cb-select">
+          <option value="all">All levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="cb-results-count">
+        Showing <span id="cb-count">24</span> guides
+      </div>
+    </div>
+  </div>
+
+  <main class="cb-main">
+
+    <!-- Section: Healthy Eating -->
+    <section class="cb-section" data-category="healthy">
+      <div class="cb-section-header">
+        <div>
+          <h2 class="cb-section-title">🥦 Healthy Eating</h2>
+          <p class="cb-section-sub">Nourish your body with expert-backed guides</p>
+        </div>
+        <a href="#" class="cb-see-all">See all →</a>
+      </div>
+      <div class="cb-grid">
+
+        <div class="cb-card" data-category="healthy" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book1.jpg" alt="Whole Food Living">
+            <span class="cb-badge">Bestseller</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag">Healthy</span>
+            <h3 class="cb-card-title">Whole Food Living</h3>
+            <p class="cb-card-author">by Emma Clarke</p>
+            <p class="cb-card-desc">A complete guide to transitioning to whole, unprocessed foods without sacrificing taste.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>5.0</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="healthy" data-rating="4" data-level="intermediate">
+          <div class="cb-card-img">
+            <img src="assets/images/book2.jpg" alt="The Anti-Inflammatory Kitchen">
+            <span class="cb-badge cb-badge--new">New</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag">Healthy</span>
+            <h3 class="cb-card-title">The Anti-Inflammatory Kitchen</h3>
+            <p class="cb-card-author">by Dr. Sarah Obi</p>
+            <p class="cb-card-desc">Recipes designed to reduce inflammation and boost long-term wellness.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.2</span></div>
+              <span class="cb-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="healthy" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book3.jpg" alt="Mediterranean Every Day">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag">Healthy</span>
+            <h3 class="cb-card-title">Mediterranean Every Day</h3>
+            <p class="cb-card-author">by Lucia Romano</p>
+            <p class="cb-card-desc">Simple, heart-healthy Mediterranean meals for everyday life.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>4.9</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="healthy" data-rating="4" data-level="advanced">
+          <div class="cb-card-img">
+            <img src="assets/images/book4.jpg" alt="Gut Health Reset">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag">Healthy</span>
+            <h3 class="cb-card-title">Gut Health Reset</h3>
+            <p class="cb-card-author">by James Thornton</p>
+            <p class="cb-card-desc">Science-led recipes for a healthier gut microbiome and better digestion.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.5</span></div>
+              <span class="cb-level-badge advanced">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Under 10 Minutes -->
+    <section class="cb-section" data-category="quick">
+      <div class="cb-section-header">
+        <div>
+          <h2 class="cb-section-title">⚡ Under 10 Minutes</h2>
+          <p class="cb-section-sub">Fast, flavourful — no compromise on taste</p>
+        </div>
+        <a href="#" class="cb-see-all">See all →</a>
+      </div>
+      <div class="cb-grid">
+
+        <div class="cb-card" data-category="quick" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book1.jpg" alt="Flash Cooking">
+            <span class="cb-badge">Top Pick</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--quick">Quick</span>
+            <h3 class="cb-card-title">Flash Cooking</h3>
+            <p class="cb-card-author">by Mike Santos</p>
+            <p class="cb-card-desc">50 recipes that are on the table in under 10 minutes — perfect for busy weeknights.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>5.0</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="quick" data-rating="4" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book2.jpg" alt="5-Ingredient Wonders">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--quick">Quick</span>
+            <h3 class="cb-card-title">5-Ingredient Wonders</h3>
+            <p class="cb-card-author">by Priya Nair</p>
+            <p class="cb-card-desc">Maximum flavour with minimal ingredients — the ultimate lazy cook's handbook.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.3</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="quick" data-rating="4" data-level="intermediate">
+          <div class="cb-card-img">
+            <img src="assets/images/book3.jpg" alt="The Speed Kitchen">
+            <span class="cb-badge cb-badge--new">New</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--quick">Quick</span>
+            <h3 class="cb-card-title">The Speed Kitchen</h3>
+            <p class="cb-card-author">by Tom Adeyemi</p>
+            <p class="cb-card-desc">Pro techniques to get restaurant-quality results in record time.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.1</span></div>
+              <span class="cb-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="quick" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book4.jpg" alt="Lunchbox in Minutes">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--quick">Quick</span>
+            <h3 class="cb-card-title">Lunchbox in Minutes</h3>
+            <p class="cb-card-author">by Fatima Al-Rashid</p>
+            <p class="cb-card-desc">Healthy, satisfying lunches you can prep and pack in under 10 minutes.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>4.8</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: High Protein -->
+    <section class="cb-section" data-category="protein">
+      <div class="cb-section-header">
+        <div>
+          <h2 class="cb-section-title">💪 High Protein</h2>
+          <p class="cb-section-sub">Build muscle, stay full, eat well</p>
+        </div>
+        <a href="#" class="cb-see-all">See all →</a>
+      </div>
+      <div class="cb-grid">
+
+        <div class="cb-card" data-category="protein" data-rating="5" data-level="intermediate">
+          <div class="cb-card-img">
+            <img src="assets/images/book1.jpg" alt="Protein Power Plates">
+            <span class="cb-badge">Bestseller</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--protein">Protein</span>
+            <h3 class="cb-card-title">Protein Power Plates</h3>
+            <p class="cb-card-author">by Coach Demi Okafor</p>
+            <p class="cb-card-desc">High-protein meal plans designed around your fitness goals — tasty and macro-tracked.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>5.0</span></div>
+              <span class="cb-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="protein" data-rating="4" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book2.jpg" alt="Lean & Green">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--protein">Protein</span>
+            <h3 class="cb-card-title">Lean & Green</h3>
+            <p class="cb-card-author">by Nina Walsh</p>
+            <p class="cb-card-desc">Plant-based protein sources that actually satisfy — no meat needed.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.4</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="protein" data-rating="4" data-level="advanced">
+          <div class="cb-card-img">
+            <img src="assets/images/book3.jpg" alt="The Athlete's Kitchen">
+            <span class="cb-badge cb-badge--new">New</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--protein">Protein</span>
+            <h3 class="cb-card-title">The Athlete's Kitchen</h3>
+            <p class="cb-card-author">by Dr. Ray Mensah</p>
+            <p class="cb-card-desc">Performance nutrition for serious athletes — fuelling training from morning to night.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.6</span></div>
+              <span class="cb-level-badge advanced">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="protein" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book4.jpg" alt="Egg Everything">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--protein">Protein</span>
+            <h3 class="cb-card-title">Egg Everything</h3>
+            <p class="cb-card-author">by Clara Bennett</p>
+            <p class="cb-card-desc">100 ways to cook eggs — the most affordable high-protein ingredient in your kitchen.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>4.9</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Vegan -->
+    <section class="cb-section" data-category="vegan">
+      <div class="cb-section-header">
+        <div>
+          <h2 class="cb-section-title">🌱 Vegan</h2>
+          <p class="cb-section-sub">Plant-powered cooking at its finest</p>
+        </div>
+        <a href="#" class="cb-see-all">See all →</a>
+      </div>
+      <div class="cb-grid">
+
+        <div class="cb-card" data-category="vegan" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book1.jpg" alt="Green Feasts">
+            <span class="cb-badge">Top Pick</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--vegan">Vegan</span>
+            <h3 class="cb-card-title">Green Feasts</h3>
+            <p class="cb-card-author">by Yemi Adebayo</p>
+            <p class="cb-card-desc">Vibrant, filling plant-based meals that make going vegan feel effortless.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>5.0</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="vegan" data-rating="4" data-level="intermediate">
+          <div class="cb-card-img">
+            <img src="assets/images/book2.jpg" alt="The Vegan Comfort Kitchen">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--vegan">Vegan</span>
+            <h3 class="cb-card-title">The Vegan Comfort Kitchen</h3>
+            <p class="cb-card-author">by Sara Lindqvist</p>
+            <p class="cb-card-desc">All your favourite comfort foods — reimagined without dairy or meat.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.3</span></div>
+              <span class="cb-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="vegan" data-rating="4" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book3.jpg" alt="Budget Vegan">
+            <span class="cb-badge cb-badge--new">New</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--vegan">Vegan</span>
+            <h3 class="cb-card-title">Budget Vegan</h3>
+            <p class="cb-card-author">by Marcus Cole</p>
+            <p class="cb-card-desc">Eating vegan on a tight budget — proving plants don't have to be pricey.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.1</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="vegan" data-rating="5" data-level="advanced">
+          <div class="cb-card-img">
+            <img src="assets/images/book4.jpg" alt="Fine Dining Vegan">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--vegan">Vegan</span>
+            <h3 class="cb-card-title">Fine Dining Vegan</h3>
+            <p class="cb-card-author">by Chef Isla Park</p>
+            <p class="cb-card-desc">Restaurant-quality plant-based dishes for when you want to truly impress.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>4.8</span></div>
+              <span class="cb-level-badge advanced">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Budget Meals -->
+    <section class="cb-section" data-category="budget">
+      <div class="cb-section-header">
+        <div>
+          <h2 class="cb-section-title">💰 Budget Meals</h2>
+          <p class="cb-section-sub">Eat well, spend less</p>
+        </div>
+        <a href="#" class="cb-see-all">See all →</a>
+      </div>
+      <div class="cb-grid">
+
+        <div class="cb-card" data-category="budget" data-rating="5" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book1.jpg" alt="£5 Feasts">
+            <span class="cb-badge">Bestseller</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--budget">Budget</span>
+            <h3 class="cb-card-title">£5 Feasts</h3>
+            <p class="cb-card-author">by Joe Briggs</p>
+            <p class="cb-card-desc">Full meals for under £5 that the whole family will love — no coupon-clipping required.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>5.0</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="budget" data-rating="4" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book2.jpg" alt="Fridge Raid Recipes">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--budget">Budget</span>
+            <h3 class="cb-card-title">Fridge Raid Recipes</h3>
+            <p class="cb-card-author">by Abi Turner</p>
+            <p class="cb-card-desc">Turn whatever's left in your fridge into something genuinely delicious.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.2</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="budget" data-rating="4" data-level="beginner">
+          <div class="cb-card-img">
+            <img src="assets/images/book3.jpg" alt="Student Eats">
+            <span class="cb-badge cb-badge--new">New</span>
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--budget">Budget</span>
+            <h3 class="cb-card-title">Student Eats</h3>
+            <p class="cb-card-author">by Kemi Osei</p>
+            <p class="cb-card-desc">Real food for real students — easy, cheap, and actually nutritious.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="4">★★★★☆ <span>4.0</span></div>
+              <span class="cb-level-badge beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb-card" data-category="budget" data-rating="5" data-level="intermediate">
+          <div class="cb-card-img">
+            <img src="assets/images/book4.jpg" alt="Batch Cook Bible">
+          </div>
+          <div class="cb-card-body">
+            <span class="cb-tag cb-tag--budget">Budget</span>
+            <h3 class="cb-card-title">Batch Cook Bible</h3>
+            <p class="cb-card-author">by Helen Park</p>
+            <p class="cb-card-desc">Cook once, eat all week — the definitive guide to batch cooking on a budget.</p>
+            <div class="cb-card-footer">
+              <div class="cb-stars" data-rating="5">★★★★★ <span>4.7</span></div>
+              <span class="cb-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- No results message -->
+    <div class="cb-no-results" id="cb-no-results" style="display:none;">
+      <p>😕 No cook books match your search. Try a different keyword or filter.</p>
+    </div>
+
+  </main>
+
+  <!-- Back to top -->
+  <button class="cb-back-top" id="cb-back-top" title="Back to top">↑</button>
+
+  <script src="js/cookbooks.js"></script>
+</body>
+</html>
